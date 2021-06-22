@@ -59,7 +59,7 @@ In addition, the p-value of our linear regression analysis is 5.35e-11, which is
 
 From our linear regression model, the r-squared value is 0.71490, which means that roughly 70% of the variablilty of our dependent variable (mpg predictions) is explained using this linear model. This means that this linear model predicts mpg of the MechaCar prototypes effectively.
 
-## Summary statistics on the pounds per square inch (PSI)
+## Summary statistics on Suspension Coils
 Using the Suspension_Coil.csv a total summary of the PSI on the suspension coils was calculated for all of the vehicles manufactured:
 ```
 total_summary <- SuspensionCoil_table %>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI), .groups = 'keep')
@@ -83,7 +83,70 @@ The design specifications for the MechaCar suspension coils dictate that the var
 Clearly the overall summary shows that with a variance of __62.29356__ the coils __are__ within specifications.<br>
 But __Lot 3__ shows that the variance is over 100 at __170__.  This lot __is not__ within design specifications.
 
-## T-Tests
+## T-Tests on Suspension Coils
+The t.test is used against the SuspensionCoil_table to determine if the PSI across all manufacturing lots is statisticall different from the population mean of 1,500 pounds per square inch.  <br>
+
+Assuming our significance level was the common 0.05 percent for all the tests below, our p-value is above our significance level in all tests except for __Lot 3__. Therefore for the test on all of the Lots and Lot 1 and Lot 2, we do not have sufficient evidence to reject the null hypothesis.
+
+On the first test below where we use all of the data we find that the mean of x is 1498.78 and the p-value is 0.06028.<br>
+```
+> t.test(SuspensionCoil_table$PSI,mu=1500)
+
+	One Sample t-test
+
+data:  SuspensionCoil_table$PSI
+t = -1.8931, df = 149, p-value = 0.06028
+alternative hypothesis: true mean is not equal to 1500
+95 percent confidence interval:
+ 1497.507 1500.053
+sample estimates:
+mean of x 
+  1498.78 
+```
+Lot 1 shows that the mean is 1500 and the p-value is 1.  And Lot 2 has a mean of 1500.2 and a p-value of 0.6072. <br>
+```
+> t.test(subset(SuspensionCoil_table, Manufacturing_Lot=="Lot1")$PSI,mu=1500)
+
+	One Sample t-test
+
+data:  subset(SuspensionCoil_table, Manufacturing_Lot == "Lot1")$PSI
+t = 0, df = 49, p-value = 1
+alternative hypothesis: true mean is not equal to 1500
+95 percent confidence interval:
+ 1499.719 1500.281
+sample estimates:
+mean of x 
+     1500 
+
+> t.test(subset(SuspensionCoil_table, Manufacturing_Lot=="Lot2")$PSI,mu=1500)
+
+	One Sample t-test
+
+data:  subset(SuspensionCoil_table, Manufacturing_Lot == "Lot2")$PSI
+t = 0.51745, df = 49, p-value = 0.6072
+alternative hypothesis: true mean is not equal to 1500
+95 percent confidence interval:
+ 1499.423 1500.977
+sample estimates:
+mean of x 
+   1500.2 
+```
+Lot 3 shows that we have a mean of 1496.14 and a p-value less then .05 at 0.04168.  This means that we have significant evidence in this t.test to reject the null hypothesis.
+```
+> t.test(subset(SuspensionCoil_table, Manufacturing_Lot=="Lot3")$PSI,mu=1500)
+
+	One Sample t-test
+
+data:  subset(SuspensionCoil_table, Manufacturing_Lot == "Lot3")$PSI
+t = -2.0916, df = 49, p-value = 0.04168
+alternative hypothesis: true mean is not equal to 1500
+95 percent confidence interval:
+ 1492.431 1499.849
+sample estimates:
+mean of x 
+  1496.14 
+```
+
 
 
 
