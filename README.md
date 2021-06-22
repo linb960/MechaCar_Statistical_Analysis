@@ -59,6 +59,32 @@ In addition, the p-value of our linear regression analysis is 5.35e-11, which is
 
 From our linear regression model, the r-squared value is 0.71490, which means that roughly 70% of the variablilty of our dependent variable (mpg predictions) is explained using this linear model. This means that this linear model predicts mpg of the MechaCar prototypes effectively.
 
+## Summary statistics on the pounds per square inch (PSI)
+Using the Suspension_Coil.csv a total summary of the PSI on the suspension coils was calculated for all of the vehicles manufactured:
+```
+total_summary <- SuspensionCoil_table %>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI), .groups = 'keep')
+> total_summary
+Mean        Median   Variance       SD
+1 1498.78   1500     62.29356       7.892627
+```
+A summary by Lot number was also calculated:
+```
+> lot_summary <- SuspensionCoil_table %>% group_by(Manufacturing_Lot)  %>%  summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sqrt(var(PSI)), .groups = 'keep')
+
+# Groups:   Manufacturing_Lot [3]
+  Manufacturing_Lot  Mean  Median   Variance     SD
+
+1 Lot1              1500   1500     0.980      0.990
+2 Lot2              1500.  1500     7.47       2.73 
+3 Lot3              1496.  1498.    170.       13.0  
+```
+The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per square inch. <br>
+#### Findings
+Clearly the overall summary shows that with a variance of __62.29356__ the coils __are__ within specifications.<br>
+But __Lot 3__ shows that the variance is over 100 at __170__.  This lot __is not__ within design specifications.
+
+## T-Tests
+
 
 
 
