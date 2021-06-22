@@ -147,7 +147,7 @@ mean of x
   1496.14 
 ```
 ## Study Design: MechaCar vs Competition
-Once the MechaCar production team sorts out the issues they are having in production they will then hopefully begin production on a new car.  One of the factors not discussed so far is how much the consumer will pay for this new car.  While there may be many ways to improve fuel efficiency, add horsepower for performance or increase the overall safety of the vehicle, ultimately most consumers won't buy a MechaCar that's similar to other cars if it is too expensive.  If we assume that AutosRus' knows approximately how much the MechaCar will cost to manufacture it will be helpful to do a study.  Since MechaCar doesn't exist yet it will be helpful to survey individuals on current cars they would buy and how much they would spend. <br>
+Once the MechaCar production team sorts out the issues they are having in production they will then hopefully begin production on a new car.  One of the factors not discussed so far is how much the consumer will pay for this new car.  While there may be many ways to improve fuel efficiency, add horsepower for performance or increase the overall safety of the vehicle, ultimately most consumers won't buy a MechaCar that's similar to other cars if it is too expensive.  If we assume that AutosRus' knows approximately how much the MechaCar will cost to manufacture it will be helpful to do a study.  Since the MechaCar is still in prototype and doesn't exist yet it will be helpful to survey individuals on current cars they would buy and how much they would spend. <br>
 
 #### Metrics
 The metric for this analysis is to find out how many people would buy new cars similar to the MechaCar and how much they pay.
