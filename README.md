@@ -146,9 +146,20 @@ sample estimates:
 mean of x 
   1496.14 
 ```
+## Study Design: MechaCar vs Competition
+Once the MechaCar production team sorts out the issues they are having in production they will then hopefully begin production on a new car.  One of the factors not discussed so far is how much the consumer will pay for this new car.  While there may be many ways to improve fuel efficiency, add horsepower for performance or increase the overall safety of the vehicle, ultimately most consumers won't buy a MechaCar that's similar to other cars if it is too expensive.  If we assume that AutosRus' knows approximately how much the MechaCar will cost to manufacture it will be helpful to do a study.  Since MechaCar doesn't exist yet it will be helpful to survey individuals on current cars they would buy and how much they would spend. <br>
 
+#### Metrics
+The metric for this analysis is to find out how many people would buy new cars similar to the MechaCar and how much they pay.
 
+#### Null Hypothesis
+This hypothesis says that there is no relationship between what a consumer will pay for a car and the cost of a car.  The alternative hypothesis shows that these factors are related.
 
+#### Statistical Test
+It would be important to note that we want to know if a consumer will buy a car like MechaCar, yes or no.  This is a __Dichotomous categorical__ data type and it is our dependant variable.   The independant variable is the type of car the person purchased is __Nominal categorical__ data type.  Therefore we will use a __chi-squared test__.  This answers the question about whether there is a difference in catagorical frequencies between groups.  "The chi-squared statistic is a single number that tells you how much difference exists between your observed counts and the counts you would expect if there were no relationship at all in the population."(quoted from https://www.statisticshowto.com/probability-and-statistics/chi-square/)
+
+#### Data
+The data would need to a survey of individuals.  Given a list of different cars, all similiar to MechaCar, would the individual buy the car.  For each car they say yes to additional data can be gathered to help the manufacture with production.  If they answer no then we could look at asking additional survey questions about what factors make them say no.  The size of the population surveyed should be large enough and to get an accurate analysis.  Also, surveys should be done in various different parts of the country to determine if of this type of vehicle can sell amoungst different types of populations.
 
 
 
